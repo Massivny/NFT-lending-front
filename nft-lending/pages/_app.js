@@ -7,10 +7,18 @@ import User from './user'
 import Investor from './investor'
 import Owner from './owner'
 import { useEffect } from 'react';
+import { defineChain } from 'thirdweb'
+import { ContractProvider } from '../contexts/ContractContext';
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
 const activeChain = 'ethereum';
+
+const chain = {
+	name: "Blast Sepolia Testnet",
+	chainId: 168587773,
+	rpcUrls: ["168587773.rpc.thirdweb.com"],
+  };
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
@@ -28,11 +36,12 @@ function MyApp({ Component, pageProps }) {
 	
 	return (
 		<ThirdwebProvider
-			activeChain={activeChain}
+			activeChain={'sepolia'}
 			clientId="02549f8e16068605c4537f94b60c28e6"
 		>	
-			
-			<Component {...pageProps} />
+				<ContractProvider>
+					<Component {...pageProps} />
+				</ContractProvider>
 		</ThirdwebProvider>
 
 	);

@@ -1,5 +1,5 @@
 const ContractABI = [
-    [
+    
         {
           "inputs": [
             {
@@ -800,7 +800,7 @@ const ContractABI = [
           "stateMutability": "payable",
           "type": "receive"
         }
-      ]
+      
 ]
 
 export default ContractABI;

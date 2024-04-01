@@ -7,6 +7,9 @@ const OwnerPage = () => {
           <title>OWNER SPACE</title>
           <meta name="description" content="dApp that allows to lend NFTs agains native tokens"/>
         </Head>
+        <div className={styles.centeredText}>
+        <p>UNDER DEVELOPMENT</p>
+      </div>
       </div>
     )
   }
